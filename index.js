@@ -1,5 +1,6 @@
 const express = require('express')
 const multer = require('multer')
+var cors = require('cors')
 
 const app = express()
 const port = 5000
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.use(cors())
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
