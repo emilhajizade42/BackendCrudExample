@@ -57,6 +57,12 @@ app.get('/', (req, res) => {
   res.send(data)
 })
 
+app.get('/:id', (req, res) => {
+  const id = req.params.id;
+  element =  data.find(item=>item.id == id)
+  res.send(element)
+})
+
 app.post("/", upload.single('uploaded_file'), function (req, res) {
     const body = req.body;
     idCounter++
